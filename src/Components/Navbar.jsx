@@ -31,7 +31,9 @@ function AppNavbar({setActivePage}) {
                     <li className="nav-item">
               <button
                 className="nav-link btn btn-link text-white"
-                onClick={() => setActivePage("news")}
+                onClick={() => {setActivePage("news");
+                    setSelectedCategory(null);
+                }}
               >
                 Berita Terbaru
               </button>
