@@ -1,5 +1,7 @@
-function Home({setActivePage}) {
+function Home({setActivePage, setSelectedCategory}) {
     return (
+        <>
+        {/* hero/banner */}
         <section 
         style={
             {
@@ -30,6 +32,45 @@ function Home({setActivePage}) {
 
             </div> 
         </section>
+
+        {/* KATEGORI */}
+        <section style={{ padding: "80px 0", backgroundColor: "#f8f9fa" }}>
+        <div className="container">
+            <h2 className="fw-bold text-center mb-5">
+                Ktegori Berita
+            </h2>
+
+            <div className="row text-center">
+                {[
+                    {name: "Teknologi", color:"primary", icon:"💻"},
+                     { name: "Bencana", color: "danger", icon: "🌊" },
+                      { name: "Nasional", color: "success", icon: "🇮🇩" },
+                       { name: "Internasional", color: "warning", icon: "🌍" }
+                ].map((cat, index) => (
+                    <div className="col-md-3 mb-4" key={index}>
+                        <div
+                  className="card h-100 border-0 shadow-sm category-card"
+                  style={{cursor:"pointer"}}
+                  onClick={()=>{
+                    setSelectedCategory(cat.name);
+                    setActivePage("news");
+                  }}
+                  >
+                    <div className="card-body">
+                        <span className={`badge bg-${cat.color} mb-3`}>{cat.icon} {cat.name}</span>
+                    <h5 className="fw-semibold">{cat.name}</h5>
+                    <p className="text-muted" style ={{ fontSize: "14px" }}>
+                      Berita terbaru seputar {cat.name.toLowerCase()}
+                      </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+        </div>
+
+        </section>
+        </>
     );
 }
 export default Home;
