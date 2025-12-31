@@ -2,6 +2,10 @@ import { useState } from "react";
 import AppNavbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import NewList from "./Components/NewList";
+import NewsDetail from "./Components/NewsDetail";
+import Footer from "./Components/Footer";
+
+
 import "./App.css";
 
 function App(){
@@ -12,7 +16,8 @@ const [selectedNews, setSelectedNews] = useState(null);
   return (
     <>
     <AppNavbar setActivePage={setActivePage}
-    setSelectedCategory={selectedCategory}/>
+     setSelectedCategory={setSelectedCategory}
+     />
 
     {activePage === "home" && (
         <Home setActivePage={setActivePage}
@@ -21,9 +26,17 @@ const [selectedNews, setSelectedNews] = useState(null);
     {activePage === "news" && !selectedNews &&(
       <NewList
       category={selectedCategory}
-      onSelect={selectedNews}
+      onSelect={setSelectedNews}
       />
     )}
+    {selectedNews &&(
+      <NewsDetail news={selectedNews}
+      onBack={() => setSelectedNews(null)}
+      />
+    )}
+
+    <Footer setActivePage={setActivePage} />
+
     </>
   )
 }

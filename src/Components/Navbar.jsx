@@ -1,10 +1,13 @@
-function AppNavbar({setActivePage}) {
+function AppNavbar({setActivePage, setSelectedCategory }) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
                 <span className="navbar-brand fw-bold"
                 style={{cursor:"pointer" }}
-                onClick={() => setActivePage("home")}
+                onClick={() => { setActivePage("home");
+                  setSelectedCategory(null);
+                }
+                }
                 >
                     Berita Online
                 </span>
@@ -23,7 +26,10 @@ function AppNavbar({setActivePage}) {
                          <li className="nav-item">
                             <button
                 className="nav-link btn btn-link text-white"
-                onClick={() =>  setActivePage("home")}
+                onClick={() =>  {
+                  setActivePage("home");
+                  setSelectedCategory(null);
+                }}
                 >
                     Home
                 </button>

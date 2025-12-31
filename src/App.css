@@ -12,7 +12,20 @@
   transition: all 0.3s ease;
 }
 
+.news-card img{
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
+
 .news-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
+
+.img{
+  max-height: 450px;
+  object-fit: cover;
+}
+
+
