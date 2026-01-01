@@ -4,6 +4,7 @@ import Home from "./Components/Home";
 import NewList from "./Components/NewList";
 import NewsDetail from "./Components/NewsDetail";
 import Footer from "./Components/Footer";
+import About from "./Components/About";
 
 
 import "./App.css";
@@ -34,8 +35,10 @@ const [selectedNews, setSelectedNews] = useState(null);
       onBack={() => setSelectedNews(null)}
       />
     )}
+     {activePage === "about" && <About />}
 
     <Footer setActivePage={setActivePage} />
+   
 
     </>
   )
