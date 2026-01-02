@@ -2,7 +2,7 @@ function NewsDetail({news, onBack}) {
     return (
         <section style={{backgroundColor: "#f8f9fa", minHeight: "100vh"}}>
         <div className="container my-5">
-            <button className="btn btn-outline-secondary mb-4" onClick={onBack}>
+            <button className="btn btn-secondary mb-4" onClick={onBack}>
                 Kembali
             </button>
 

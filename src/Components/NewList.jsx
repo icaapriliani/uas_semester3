@@ -1,4 +1,8 @@
+import {useState} from "react";
+
 function NewList({onSelect, category}){
+
+    const [search,setSearch]=useState("");
     const newsData =[
         {
             id:1,
@@ -132,19 +136,30 @@ function NewList({onSelect, category}){
             source :"https://www.sciencedirect.com/science/article/pii/S0264999322002267"
          }
     ];
-const filteredNews = category
-? newsData.filter(n=>n.category === category
-)
-: newsData;
+const filteredNews = newsData.filter((news) => {
+    const matchCategory=category ? news.category=== category : true;
+    const matchSearch=news.title
+    .toLowerCase()
+    .includes(search.toLowerCase());
+    return matchCategory && matchSearch;
+});
+
 
 return(
     <section style={{padding: "80px 0" }}>
-        <div className="container">
+        <div className="container my-5 ">
             <h2 className="fw-bold mb-4">
                 {category ? `Kategori ${category}` : "Berita Terbaru"}
             </h2>
 
-            <div className="row">
+            <input type="text"
+            className="form-control mb-4"
+            placeholder="Cari Berita..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            />
+
+            <div className="row g-4">
                 {filteredNews.map((news)=> (
                     <div className="col-lg-3 col-md-6 mb-4" key={news.id}>
                         <div className="card h-100 shadow-sm news-card" style={{cursor:"pointer"}} onClick={() =>onSelect(news)}>
@@ -171,7 +186,12 @@ return(
                 ))}
 
                 {filteredNews.length === 0 && (
-                    <p>Tidak terdapat berita pada kategori ini</p>
+                    <div className="col-12">
+                        <p className="text-center text-muted">
+                            Berita tidak ditemukan
+                        </p>
+                    </div>
+                    
                 )}
             </div>
         </div>
