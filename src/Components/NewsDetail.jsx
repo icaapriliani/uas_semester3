@@ -29,6 +29,11 @@ function NewsDetail({news, onBack}) {
                     }}
                     >
                     {news.excerpt}</p>
+                  
+                    <a href={news.source} target="_blank" rel="noopener noreferre" className="btn btn-primary mt-3">
+                        Baca di portal Resmi 
+                    </a>
+    
                 </div>
             </div>
 
