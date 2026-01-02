@@ -37,7 +37,7 @@ function Home({setActivePage, setSelectedCategory}) {
         <section style={{ padding: "80px 0", backgroundColor: "#f8f9fa" }}>
         <div className="container">
             <h2 className="fw-bold text-center mb-5">
-                Ktegori Berita
+                Kategori Berita
             </h2>
 
             <div className="row text-center">

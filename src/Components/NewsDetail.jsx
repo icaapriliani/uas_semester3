@@ -3,7 +3,7 @@ function NewsDetail({news, onBack}) {
         <section style={{backgroundColor: "#f8f9fa", minHeight: "100vh"}}>
         <div className="container my-5">
             <button className="btn btn-outline-secondary mb-4" onClick={onBack}>
-                Kemabli
+                Kembali
             </button>
 
             <div className="card border-0 shadow-lg">
