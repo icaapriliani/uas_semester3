@@ -5,7 +5,7 @@ function Home({ setActivePage, setSelectedCategory }) {
       <section
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1558448495-5ef3fce92344?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmFuamlyfGVufDB8fDB8fHww')",
+            "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),url('https://media.istockphoto.com/id/2172308067/id/foto/pemandangan-udara-banjir-pusat-kota-chiang-rai-di-tepi-sungai-kok-setelah-hujan-lebat.jpg?s=612x612&w=0&k=20&c=pgqBKf1wyqL9jCPpUAPAyedNn_TC2Obb3sOQh4mq0Tk=')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           padding: "120px 0",
