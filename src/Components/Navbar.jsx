@@ -1,44 +1,49 @@
-function AppNavbar({setActivePage, setSelectedCategory }) {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container">
-                <span className="navbar-brand fw-bold"
-                style={{cursor:"pointer" }}
-                onClick={() => { setActivePage("home");
-                  setSelectedCategory(null);
-                }
-                }
-                >
-                    Berita Online
-                </span>
+function AppNavbar({ setActivePage, setSelectedCategory, darkMode, setDarkMode }) {
+  return (
+    <nav className= {`navbar navbar-expand-lg ${
+      darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"
+    }`} >
+   
+      <div className="container">
+        <span
+          className="navbar-brand fw-bold"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            setActivePage("home");
+            setSelectedCategory(null);
+          }}
+        >
+          Berita Online
+        </span>
 
-                <button 
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-                <div className="collapse navbar-collapse" id="navbarNav">
-                      <ul className="navbar-nav ms-auto">
-                         <li className="nav-item">
-                            <button
-                className="nav-link btn btn-link text-white"
-                onClick={() =>  {
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <button
+                className="nav-link btn btn-link "
+                onClick={() => {
                   setActivePage("home");
                   setSelectedCategory(null);
                 }}
-                >
-                    Home
-                </button>
-                    </li>
-                    <li className="nav-item">
+              >
+                Home
+              </button>
+            </li>
+            <li className="nav-item">
               <button
-                className="nav-link btn btn-link text-white"
-                onClick={() => {setActivePage("news");
-                    setSelectedCategory(null);
+                className="nav-link btn btn-link "
+                onClick={() => {
+                  setActivePage("news");
+                  setSelectedCategory(null);
                 }}
               >
                 Berita Terbaru
@@ -46,18 +51,26 @@ function AppNavbar({setActivePage, setSelectedCategory }) {
             </li>
             <li className="nav-item">
               <button
-                className="nav-link btn btn-link text-white"
+                className="nav-link btn btn-link "
                 onClick={() => setActivePage("about")}
               >
                 Tentang
               </button>
             </li>
-                      </ul>
-                </div>
-
-            </div>
-        </nav>
-    )
+            <li className="nav-item ms-3">
+              <button className={`btn btn-sm ${
+              darkMode ? "btn-outline-light": "btn-outline-dark"
+            }`}
+              onClick={() => setDarkMode(!darkMode)}
+              >
+                {darkMode ?"☀️ Light" : "🌙 Dark" }
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
 export default AppNavbar;
