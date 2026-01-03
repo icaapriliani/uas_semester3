@@ -1,6 +1,6 @@
 function NewsDetail({ news, onBack }) {
   return (
-    <section style={{ backgroundColor: "#f8f9fa", minHeight: "100vh" }}>
+    <section style={{ backgroundColor: "#f8f9fa", minHeight: "100vh", paddingTop:"20px" }}>
       <div className="container my-5">
         <button className="btn btn-secondary mb-4" onClick={onBack}>
           Kembali

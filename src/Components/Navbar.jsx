@@ -57,9 +57,9 @@ function AppNavbar({ setActivePage, setSelectedCategory, darkMode, setDarkMode }
                 Tentang
               </button>
             </li>
-            <li className="nav-item ms-3">
-              <button className={`btn btn-sm ${
-              darkMode ? "btn-outline-light": "btn-outline-dark"
+            <li className="nav-item ms-lg-3">
+              <button className={`nav-link btn btn-link ${
+              darkMode ? "text-light": "text-dark"
             }`}
               onClick={() => setDarkMode(!darkMode)}
               >
